@@ -1,14 +1,7 @@
-import {
-  collection,
-  doc,
-  getDocs,
-  getFirestore,
-  setDoc,
-} from "firebase/firestore";
-import { useFormik } from "formik";
+import { collection, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { db } from "../firebase/firebase";
-
+import css from "./ShopsPage.module.css";
 export default function ShopsPage() {
   const [localShopsArr, setLocalShopsArr] = useState([]);
   const [newBlogTitle, setNewBlogTitle] = useState("");
@@ -39,9 +32,9 @@ export default function ShopsPage() {
     <div className="container">
       <h2>Shops Page</h2>
       <p>Welcome to Shops Page</p>
-      <ul>
+      <ul className={css.shopList}>
         {localShopsArr.map((sObj) => (
-          <li key={sObj.id}>
+          <li className="card" key={sObj.id}>
             <h4>{sObj.shopName}</h4>
             <p>{sObj.town}</p>
             <p>{sObj.startYear}</p>
