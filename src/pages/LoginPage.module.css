@@ -1,0 +1,10 @@
+.loginPageTitle {
+  padding: 30px;
+}
+
+.loginContainer {
+  display: flex;
+  gap: 30px;
+  justify-content: center; /* Horizontalusis centrinimas */
+  align-items: center;
+}

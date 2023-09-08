@@ -1,0 +1,32 @@
+.footerContainer {
+  background: linear-gradient(to top, #006384, transparent);
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.logo {
+  font-size: 30px;
+  padding: 10px 0;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navLink {
+  padding: 0.3em 1em;
+  display: inline-block;
+}
+.navLink:hover {
+  text-decoration: underline;
+}
+.shownEmail {
+  padding: 0.3em 1em;
+
+  display: inline-block;
+}

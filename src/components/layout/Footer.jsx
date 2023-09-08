@@ -1,8 +1,8 @@
 import { Link, NavLink } from "react-router-dom";
-import css from "./Header.module.css";
 import { getAuth, signOut } from "firebase/auth";
 import { toast } from "react-hot-toast";
 import { useAuth } from "../../store/AuthProvider";
+import css from "./Footer.module.css";
 
 function logoutFire() {
   const auth = getAuth();
@@ -20,8 +20,8 @@ export default function Header() {
   const ctx = useAuth();
   console.log("ctx ===", ctx);
   return (
-    <div className={css.headerContainer}>
-      <header className={css.header}>
+    <div className={css.footerContainer}>
+      <header className={css.footer}>
         {/* <div className="container"> */}
         <Link className={css.navLink} to={"/"}>
           My <strong>Page</strong>

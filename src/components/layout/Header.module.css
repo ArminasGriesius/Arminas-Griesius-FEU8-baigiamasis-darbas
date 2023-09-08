@@ -1,0 +1,33 @@
+.headerContainer {
+  background: linear-gradient(to bottom, #006384, transparent);
+}
+.header {
+  /* color: #fff; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  /* apridboti tik maximalu ploti */
+  max-width: 800px;
+  /* skaiciuoti parastes automatiskai vienodai is kaires ir is desines */
+  margin: 0 auto;
+  /* background-image: url(https://as1.ftcdn.net/v2/jpg/03/35/16/56/1000_F_335165649_WHsX6cbAQV4Ke3gH5aJlMYtnvUqomSv8.jpg);
+  background-size: cover; */
+}
+.logo {
+  font-size: 30px;
+  padding: 10px 0;
+}
+
+.navLink {
+  padding: 0.3em 1em;
+  display: inline-block;
+}
+.navLink:hover {
+  text-decoration: underline;
+}
+.shownEmail {
+  padding: 0.3em 1em;
+
+  display: inline-block;
+}
