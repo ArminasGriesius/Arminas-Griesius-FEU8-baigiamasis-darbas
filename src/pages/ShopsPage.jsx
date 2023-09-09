@@ -1,12 +1,11 @@
-import { collection, getDocs } from "firebase/firestore";
+import { collection, deleteDoc, doc, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { db } from "../firebase/firebase";
 import css from "./ShopsPage.module.css";
+
 // import css from "./ShopsPage.module.css";
 export default function ShopsPage() {
   const [localShopsArr, setLocalShopsArr] = useState([]);
-  const [newBlogTitle, setNewBlogTitle] = useState("");
-  const [newBlogParagraph, setNewBlogParagraph] = useState("");
 
   async function getBlogsFromFirebase() {
     try {
@@ -25,6 +24,17 @@ export default function ShopsPage() {
       console.log("something went wrong", error);
     }
   }
+  async function handleDelete(shopId) {
+    console.log("delete", shopId);
+
+    await deleteDoc(doc(db, "shops", shopId));
+    const updatedLocalShopsArr = localShopsArr.filter(
+      (shop) => shop.id !== shopId
+    );
+
+    setLocalShopsArr(updatedLocalShopsArr);
+  }
+
   useEffect(() => {
     getBlogsFromFirebase();
     console.log("localShopsArr ===", localShopsArr);
@@ -59,6 +69,12 @@ export default function ShopsPage() {
                   <p className={css.town}>Based in: {sObj.town}</p>
                   <p className={css.year}>Since: {sObj.startYear}</p>
                 </div>
+                <button
+                  className={css.deleteButton}
+                  onClick={() => handleDelete(sObj.id)}
+                >
+                  Delete
+                </button>
               </div>
             </li>
           ))}

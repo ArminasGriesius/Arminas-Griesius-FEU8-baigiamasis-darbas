@@ -1,65 +1,37 @@
-import { Link, NavLink } from "react-router-dom";
-import { getAuth, signOut } from "firebase/auth";
-import { toast } from "react-hot-toast";
-import { useAuth } from "../../store/AuthProvider";
 import css from "./Footer.module.css";
 
-function logoutFire() {
-  const auth = getAuth();
-
-  signOut(auth)
-    .then(() => {
-      toast.success("You have logged out");
-    })
-    .catch((error) => {
-      console.log("error ===", error);
-    });
-}
-
-export default function Header() {
-  const ctx = useAuth();
-  console.log("ctx ===", ctx);
+export default function Footer() {
   return (
     <div className={css.footerContainer}>
-      <header className={css.footer}>
-        {/* <div className="container"> */}
-        <Link className={css.navLink} to={"/"}>
-          My <strong>Page</strong>
-        </Link>
-        <nav>
-          {ctx.isUserLoggedIn && (
-            <NavLink className={css.navLink} to={"/shops-page"}>
-              Shops Page
-            </NavLink>
-          )}
-          {ctx.isUserLoggedIn && (
-            <NavLink className={css.navLink} to={"/add-shop-page"}>
-              Add Shop
-            </NavLink>
-          )}
-          {!ctx.isUserLoggedIn && (
-            <NavLink className={css.navLink} to={"/login-page"}>
-              Login
-            </NavLink>
-          )}
-          {!ctx.isUserLoggedIn && (
-            <NavLink className={css.navLink} to={"/register-page"}>
-              Register
-            </NavLink>
-          )}
-          {ctx.isUserLoggedIn && (
-            <NavLink
-              onClick={logoutFire}
-              className={css.navLink}
-              to={"/login-page"}
-            >
-              Logout
-            </NavLink>
-          )}
-          {ctx.isUserLoggedIn && <p className={css.shownEmail}>{ctx.email}</p>}
-        </nav>
-        {/* </div> */}
-      </header>
+      <footer className="container">
+        <div className={css.footer}>
+          <div className={css.sideLine}>
+            <h4>About us</h4>
+            <p>We started with HTML and CSS</p>
+            <p>Second came JavaScript</p>
+            <p>A bit of Git</p>
+            <p>And finally, React</p>
+          </div>
+          <div className={css.sideLine}>
+            <h4>Help center</h4>
+            <p>We had recordings that we could watch</p>
+            <p>Indian programmers tutorials</p>
+            <p>W3Schools</p>
+          </div>
+          <div>
+            <h4>Contact Us</h4>
+            <p>Please don't</p>
+            <p>No phone number available</p>
+            <p>No email available</p>
+          </div>
+        </div>
+        <div className={css.icons}>
+          <i className="fa fa-twitter"></i>
+          <i className="fa fa-envelope"></i>
+          <i className="fa fa-phone"></i>
+          <i className="fa fa-instagram"></i>
+        </div>
+      </footer>
     </div>
   );
 }

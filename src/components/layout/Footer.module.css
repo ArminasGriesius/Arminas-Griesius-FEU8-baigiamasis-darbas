@@ -1,32 +1,30 @@
 .footerContainer {
   background: linear-gradient(to top, #006384, transparent);
+  margin-top: 50px;
+  border-top: 1px solid #000;
 }
 .footer {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 10px;
+  gap: 15px;
+  padding: 30px 10px 30px;
   max-width: 800px;
   margin: 0 auto;
+  border-bottom: 1px solid #000;
 }
-.logo {
-  font-size: 30px;
-  padding: 10px 0;
+.sideLine {
+  border-right: 1px solid #000;
 }
-.container {
+.icons {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 18px;
+  margin-top: 20px;
+  padding-bottom: 30px;
 }
-.navLink {
-  padding: 0.3em 1em;
-  display: inline-block;
-}
-.navLink:hover {
-  text-decoration: underline;
-}
-.shownEmail {
-  padding: 0.3em 1em;
-
-  display: inline-block;
+i {
+  border: 1px solid #000;
+  border-radius: 50px;
+  padding: 10px;
 }

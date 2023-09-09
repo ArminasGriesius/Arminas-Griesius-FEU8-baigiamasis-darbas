@@ -3,6 +3,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import css from "./RegisterPage.module.css";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-hot-toast";
 
 export default function RegisterPage() {
   const navigate = useNavigate();
@@ -33,10 +34,16 @@ export default function RegisterPage() {
         const user = userCredential.user;
         // ...
         navigate("/shops-page", { replace: true });
+        toast.success("Successfully registered, welcome!");
       })
       .catch((error) => {
         const errorCode = error.code;
+        if (errorCode === "auth/email-already-in-use") {
+          toast.error("Email already exist");
+        }
+        console.log("errorCode ===", errorCode);
         const errorMessage = error.message;
+        console.log("errorMessage ===", errorMessage);
       });
   };
   return (

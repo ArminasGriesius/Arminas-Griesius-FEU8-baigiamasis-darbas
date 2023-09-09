@@ -24,7 +24,7 @@ export default function Header() {
       <header className={css.header}>
         {/* <div className="container"> */}
         <Link className={css.navLink} to={"/"}>
-          My <strong>Page</strong>
+          React<strong>Final</strong>
         </Link>
         <nav>
           {ctx.isUserLoggedIn && (

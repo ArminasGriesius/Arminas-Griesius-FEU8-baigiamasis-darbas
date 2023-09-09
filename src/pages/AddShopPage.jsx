@@ -22,7 +22,7 @@ export default function AddShopPage() {
       .max(255)
       .required("Shop name is required"),
     description: Yup.string()
-      .min(4, "Description is too short")
+      .min(6, "Description is too short")
       .required("Description is required"),
     startYear: Yup.number()
       .min(1970, "Shop is too old")
