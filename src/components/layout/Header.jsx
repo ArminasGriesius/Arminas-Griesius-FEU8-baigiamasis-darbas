@@ -22,11 +22,11 @@ export default function Header() {
   return (
     <div className={css.headerContainer}>
       <header className={css.header}>
-        {/* <div className="container"> */}
-        <Link className={css.navLink} to={"/"}>
+        <Link className={css.mainLink} to={"/"}>
           React<strong>Final</strong>
         </Link>
-        <nav>
+
+        <nav className={css.navLinks}>
           {ctx.isUserLoggedIn && (
             <NavLink className={css.navLink} to={"/shops-page"}>
               Shops Page
@@ -58,7 +58,6 @@ export default function Header() {
           )}
           {ctx.isUserLoggedIn && <p className={css.shownEmail}>{ctx.email}</p>}
         </nav>
-        {/* </div> */}
       </header>
     </div>
   );

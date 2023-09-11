@@ -4,7 +4,16 @@
 
 .loginContainer {
   display: flex;
-  gap: 30px;
-  justify-content: center; /* Horizontalusis centrinimas */
+  justify-content: center;
   align-items: center;
+  gap: 30px;
+}
+
+@media screen and (max-width: 600px) {
+  .loginPageTitle {
+    text-align: center;
+  }
+  .loginPageText {
+    display: none;
+  }
 }

@@ -6,7 +6,7 @@ export default function LoginPage() {
       <h2 className={css.loginPageTitle}>Login Page</h2>
       <div className={css.loginContainer}>
         <LoginForm />
-        <div>
+        <div className={css.loginPageText}>
           <h4>Already a member? Login and enjoy! </h4>
           <ul>
             <li>

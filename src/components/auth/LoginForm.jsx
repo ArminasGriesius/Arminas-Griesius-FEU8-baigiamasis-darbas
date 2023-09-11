@@ -16,6 +16,7 @@ export default function LoginForm() {
       email: Yup.string().email("Please enter a valid email").required(),
       password: Yup.string()
         .min(4, "Password must be at least 4 characters")
+        .trim()
         .max(255)
         .required(),
     }),
@@ -44,8 +45,8 @@ export default function LoginForm() {
   return (
     <div className="container">
       <form onSubmit={formik.handleSubmit}>
-        <div className={css.grid}>
-          <h4 className={css.loginTitle}>Login</h4>
+        <div className={css.loginFormBox}>
+          <h4 className={css.loginFormTitle}>Login</h4>
           <div>
             <label className={css.labels}>Enter Email</label>
             <input
@@ -54,7 +55,7 @@ export default function LoginForm() {
               placeholder="Email"
               onChange={formik.handleChange}
               value={formik.values.email}
-            />{" "}
+            />
             {formik.errors.email && formik.touched.email && (
               <p className={css.error}>{formik.errors.email}</p>
             )}
@@ -67,7 +68,7 @@ export default function LoginForm() {
               placeholder="Password"
               onChange={formik.handleChange}
               value={formik.values.password}
-            />{" "}
+            />
             {formik.errors.password && formik.touched.password && (
               <p className={css.error}>{formik.errors.password}</p>
             )}

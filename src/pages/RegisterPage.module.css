@@ -1,23 +1,22 @@
-.registerPageTitle {
-  padding: 30px;
-}
 .registerContainer {
   display: flex;
   gap: 30px;
-  justify-content: center; /* Horizontalusis centrinimas */
+  justify-content: center;
   align-items: center;
 }
+.registerPageTitle {
+  padding: 30px;
+}
 
-.grid {
+.registerFormBox {
   display: grid;
-  border: 2px solid #000;
-  box-shadow: 10px 10px 15px #0e999e;
-  border-radius: 10px;
-  max-width: 350px;
   gap: 30px;
+  border: 2px solid #000;
+  border-radius: 10px;
+  box-shadow: 10px 10px 15px #0e999e;
+  max-width: 350px;
   padding: 30px;
   background-image: url(https://png.pngtree.com/background/20220716/original/pngtree-gradient-aqua-blue-poster-background-picture-image_1634957.jpg);
-
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -25,20 +24,28 @@
 .registerFormTitle {
   font-weight: bold;
   font-size: 24px;
-  /* color: #10b4b9; */
 }
 
 .labels {
-  /* margin-bottom: 50px; */
   color: #10b4b9;
   -webkit-text-stroke: 1px black;
 }
 .registerSubmitButton {
+  font-weight: bold;
   background-color: transparent;
   border: 2px solid #000;
   box-shadow: 10px 10px 15px #011212;
-  font-weight: bold;
 }
 .error {
   color: tomato;
+}
+
+@media screen and (max-width: 600px) {
+  .registerPageTitle {
+    text-align: center;
+  }
+
+  .registerPageText {
+    display: none;
+  }
 }

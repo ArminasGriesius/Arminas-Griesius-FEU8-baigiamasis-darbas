@@ -19,10 +19,12 @@ export default function AddShopPage() {
   const validationSchema = Yup.object({
     shopName: Yup.string()
       .min(4, "Shop name is too short")
+      .trim()
       .max(255)
       .required("Shop name is required"),
     description: Yup.string()
       .min(6, "Description is too short")
+      .trim()
       .required("Description is required"),
     startYear: Yup.number()
       .min(1970, "Shop is too old")
@@ -31,7 +33,8 @@ export default function AddShopPage() {
       .required("Start year is required"),
     town: Yup.string()
       .required("Town is required")
-      .min(4, "Minimum 4 characters"),
+      .min(4, "Minimum 4 characters")
+      .trim(),
     imageUrl: Yup.string()
       .required("Main Image URL is required")
       .url("Invalid URL"),
@@ -71,7 +74,7 @@ export default function AddShopPage() {
     <div className="container">
       <h2 className={css.addShopPageTitle}>You can add your shop HERE!!</h2>
       <div className={css.addShopPageContainer}>
-        <div>
+        <div className={css.instructions}>
           <h4>How to create a shop? Follow instructions below: </h4>
           <ul>
             <li>
@@ -93,7 +96,7 @@ export default function AddShopPage() {
               <p>Input the URL of your shop. Note: must be a valid URL.</p>
             </li>
             <li>
-              <p>Press Submit button</p>
+              <p>Press 'Create your Shop!!' button</p>
             </li>
           </ul>
           <p>
@@ -101,7 +104,7 @@ export default function AddShopPage() {
           </p>
         </div>
         <form onSubmit={formik.handleSubmit}>
-          <div className={css.grid}>
+          <div className={css.addShopFormBox}>
             <h2 className={css.addShopFormTitle}>Add Shop Page</h2>
             <div>
               <label className={css.labels}>Shop name</label>

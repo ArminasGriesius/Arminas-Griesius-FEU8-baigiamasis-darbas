@@ -1,10 +1,4 @@
-import {
-  BrowserRouter,
-  Navigate,
-  Route,
-  Router,
-  Routes,
-} from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import ShopsPage from "./pages/ShopsPage";
 import Header from "./components/layout/Header";
 import RegisterPage from "./pages/RegisterPage";
@@ -39,7 +33,16 @@ export default function App() {
             )
           }
         ></Route>
-        <Route path={"/register-page"} element={<RegisterPage />}></Route>
+        <Route
+          path={"/register-page"}
+          element={
+            !ctx.isUserLoggedIn ? (
+              <RegisterPage />
+            ) : (
+              <Navigate to={"/shops-page"} />
+            )
+          }
+        ></Route>
         <Route path={"/login-page"} element={<LoginPage />}></Route>
       </Routes>
       <Footer />

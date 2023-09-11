@@ -50,7 +50,7 @@ export default function RegisterPage() {
     <div className="container">
       <h2 className={css.registerPageTitle}>Welcome to Register Page</h2>
       <div className={css.registerContainer}>
-        <div>
+        <div className={css.registerPageText}>
           <h4>Want to become a member? Create an account and be able to: </h4>
           <ul>
             <li>
@@ -68,7 +68,7 @@ export default function RegisterPage() {
             tuned!!
           </p>
         </div>
-        <form className={css.grid} onSubmit={formik.handleSubmit}>
+        <form className={css.registerFormBox} onSubmit={formik.handleSubmit}>
           <h4 className={css.registerFormTitle}>Register Here</h4>
           <div>
             <label className={css.labels}>Your Email</label>

@@ -101,15 +101,25 @@ button {
 }
 
 .card {
-  /* padding: 1rem; */
   box-shadow: 10px 10px 15px #14e9f0;
   border: 3px solid black;
   border-radius: 10px;
-  background-color: snow;
   text-align: center;
   width: 300px;
-
   background-image: url(https://png.pngtree.com/background/20220716/original/pngtree-gradient-aqua-blue-poster-background-picture-image_1634957.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 600px) {
+  .card {
+    width: 250px;
+  }
+  input {
+    width: 250px;
+  }
+  textarea {
+    min-width: 250px;
+    width: 250px;
+  }
 }
