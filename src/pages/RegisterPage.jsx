@@ -30,9 +30,7 @@ export default function RegisterPage() {
   const registerWithFirebase = (email, password) => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        // Signed in
         const user = userCredential.user;
-        // ...
         navigate("/shops-page", { replace: true });
         toast.success("Successfully registered, welcome!");
       })

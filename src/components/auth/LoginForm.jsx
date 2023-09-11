@@ -31,7 +31,6 @@ export default function LoginForm() {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         toast.success("Login successful, welcome");
-
         const user = userCredential.user;
         console.log("user ===", user);
         navigate("/shops-page", { replace: true });

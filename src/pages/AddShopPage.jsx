@@ -1,6 +1,5 @@
 import { addDoc, collection } from "firebase/firestore";
 import { useFormik } from "formik";
-import { useState } from "react";
 import * as Yup from "yup";
 import { db } from "../firebase/firebase";
 import { toast } from "react-hot-toast";
@@ -15,7 +14,6 @@ export default function AddShopPage() {
     imageUrl: "",
   };
 
-  // Validation schema using Yup
   const validationSchema = Yup.object({
     shopName: Yup.string()
       .min(4, "Shop name is too short")
@@ -40,22 +38,17 @@ export default function AddShopPage() {
       .url("Invalid URL"),
   });
 
-  // Formik configuration
   const formik = useFormik({
     initialValues,
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      // Handle form submission here
-      // console.log('Form submitted with values:', values);
       const newAddShop = {
         ...values,
-        // userUid: ctx.userUid,
       };
       console.log("newAddObjWithUid ===", newAddShop);
       sendDataToFireBase(newAddShop);
     },
   });
-  console.log("formik.errors ===", formik.errors);
 
   async function sendDataToFireBase(dataToSend) {
     console.log("creating");
@@ -65,7 +58,6 @@ export default function AddShopPage() {
       toast.success("Shop created");
       formik.resetForm();
     } catch (error) {
-      console.error("Error adding document: ", error);
       toast.error("something went wrong");
     }
   }

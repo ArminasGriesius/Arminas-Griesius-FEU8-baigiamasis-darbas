@@ -7,7 +7,7 @@ import css from "./ShopsPage.module.css";
 export default function ShopsPage() {
   const [localShopsArr, setLocalShopsArr] = useState([]);
 
-  async function getBlogsFromFirebase() {
+  async function getShopsFromFirebase() {
     try {
       const querySnapshot = await getDocs(collection(db, "shops"));
       const shopsBack = [];
@@ -36,7 +36,7 @@ export default function ShopsPage() {
   }
 
   useEffect(() => {
-    getBlogsFromFirebase();
+    getShopsFromFirebase();
     console.log("localShopsArr ===", localShopsArr);
   }, []);
   return (
