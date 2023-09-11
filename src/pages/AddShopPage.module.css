@@ -1,0 +1,59 @@
+.addShopPageContainer {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.addShopPageTitle {
+  padding: 30px 30px 0px 30px;
+}
+
+.addShopFormTitle {
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.addShopFormBox {
+  display: grid;
+  gap: 15px;
+  margin: 50px auto;
+  padding: 30px;
+  max-width: 350px;
+  border: 2px solid #000;
+  border-radius: 10px;
+  box-shadow: 10px 10px 15px #0e999e;
+  background-image: url(https://png.pngtree.com/background/20220716/original/pngtree-gradient-aqua-blue-poster-background-picture-image_1634957.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.labels {
+  color: #10b4b9;
+  -webkit-text-stroke: 1px black;
+}
+
+.submitButton {
+  font-weight: bold;
+  background-color: transparent;
+  border: 2px solid #000;
+  box-shadow: 10px 10px 15px #011212;
+}
+.error {
+  color: tomato;
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .addShopPageTitle {
+    text-align: center;
+  }
+  .instructions {
+    display: none;
+  }
+  .addShopFormBox {
+    width: 290px;
+    margin-top: 0;
+  }
+}

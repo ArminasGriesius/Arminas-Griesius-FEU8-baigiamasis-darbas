@@ -1,0 +1,45 @@
+.headerContainer {
+  background: linear-gradient(to bottom, #006384, transparent);
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.navLink {
+  padding: 0.3em 1em;
+  display: inline-block;
+}
+.mainLink {
+  padding: 0.3em 1em;
+  display: inline-block;
+}
+.navLink:hover {
+  text-decoration: underline;
+}
+.mainLink:hover {
+  text-decoration: underline;
+}
+.shownEmail {
+  padding: 0.3em 1em;
+  display: inline-block;
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    text-align: center;
+  }
+  .navLinks {
+    display: flex;
+    justify-content: space-between;
+  }
+  .shownEmail {
+    display: none;
+  }
+}
